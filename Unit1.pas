@@ -1,4 +1,4 @@
-﻿unit Unit1;
+unit Unit1;
 
 interface
 
@@ -15,7 +15,7 @@ type
     Memo1: TMemo;
     Label1: TLabel;
     procedure Button2Click(Sender: TObject);
-    procedure FormActivate(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -78,8 +78,9 @@ begin
     showmessage('Nothing selected');
 end;
 
-procedure TForm1.FormActivate(Sender: TObject);
+procedure TForm1.FormCreate(Sender: TObject);
 begin
+  ListBox1.MultiSelect := true;
   ListBox1.Clear;
   sDir := 'C:\Users\danpas\Desktop\test\';
   ListFiles(sDir, ListBox1.Items);
@@ -90,7 +91,7 @@ var
   searchResults: TSearchRec;
   fileAttributes: Integer;
 begin
-  ListBox1.MultiSelect := true;
+
   fileAttributes := faDirectory;
   if FindFirst(Path + '*.doc*', faAnyFile, searchResults) = 0 then
   begin
