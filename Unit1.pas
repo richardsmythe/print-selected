@@ -14,7 +14,6 @@ type
     Button2: TButton;
     Memo1: TMemo;
     Label1: TLabel;
-    Button3: TButton;
     Button4: TButton;
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -81,11 +80,6 @@ begin
   end
   else
     showmessage('Nothing selected');
-end;
-
-procedure TForm1.Button3Click(Sender: TObject);
-begin
-  form2.show;
 end;
 
 procedure TForm1.Button4Click(Sender: TObject);
